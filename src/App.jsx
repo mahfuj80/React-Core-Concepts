@@ -3,14 +3,34 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Todo from './Todo'
+import Actor from './Actor'
+import Singer from './Singer'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const actors = ['Sakib', 'Shoriful Raj', 'Jasim', 'Rubel', 'Salman Shah'];
+
+  const singers = [
+    { id: 1, name: 'Dr. Mahfujur Rahman', age: 68 },
+    { id: 2, name: 'Eva Rahman', age: 38 },
+    { id: 3, name: 'Shuvro Dev', age: 58 },
+    { id: 4, name: 'Pritom', age: 28 }
+  ]
 
   return (
     <>
       <h3>Vite + React</h3>
-      <Todo
+
+      {
+        singers.map(singer => <Singer singer={singer}></Singer>)
+      }
+
+
+      <Actor name={'Bappa Raz'}></Actor>
+      {
+        actors.map(actor => <Actor name={actor}></Actor>)
+      }
+      {/* <Todo
         task='learn Ract'
         isDone={true}></Todo>
       <Todo
@@ -18,7 +38,7 @@ function App() {
         isDone={false}></Todo>
       <Todo
         task='Try JSX'
-        isDone={true}></Todo>
+        isDone={true}></Todo> */}
 
       {/* <Device name="laptop" price='55'></Device>
       <Device name="Mobile" price="17"></Device>
