@@ -14,7 +14,7 @@ function App() {
       <Device name="Watch" price="3000"></Device>
       <Person></Person>
       <Student grade="7" score='99'></Student>
-      <Student></Student>
+      <Student grade={12} score="85"></Student>
       <Student></Student>
       <Developer></Developer>
     </>
@@ -33,14 +33,13 @@ function Person() {
   return <h3>I am {person.name} with age : {age + money}</h3>
 }
 
-const { } = { grade: '7', score: '90' };
-function Student(props) {
-  console.log(props);
+// const { } = { grade: '7', score: '90' };
+function Student({ grade = 1, score = 0 }) {
   return (
     <div className='student'>
       <h3>This is a student</h3>
-      <p>Name: </p>
-      <p>Age : </p>
+      <p>Class : {grade} </p>
+      <p>score : {score} </p>
     </div>
   )
 }
